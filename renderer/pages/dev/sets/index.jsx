@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import electron from 'electron';
-import * as types from '../types';
+import * as types from '../../types';
 
 const ipcRenderer = electron.ipcRenderer || false;
 
@@ -91,6 +92,20 @@ const Sets = () => {
           CREATE
         </button>
       </form>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/dev/sets/edit">
+              <a>Go to /sets/edit</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/dev/sets/edit">
+              <a>Go to /sets/delete</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
