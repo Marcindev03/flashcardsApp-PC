@@ -27,6 +27,8 @@ export const editSet = async (e, { _id, data }) => {
     set.flashcards = data.flashcards || set.flashcards;
 
     set.save();
+
+    e.sender.send(types.EDIT_SET, `${data.name} set was successfully edited`);
   } catch (err) {
     e.sender.send(types.ERROR, `ERROR, set ${data.name} didn't edited`);
   }
