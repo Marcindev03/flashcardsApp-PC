@@ -1,0 +1,4 @@
+export const CREATE_FLASHCARD = 'CREATE_FLASHCARD';
+export const EDIT_FLASHCARD = 'EDIT_FLASHCARD';
+export const DELETE_FLASHCARD = 'DELETE_FLASHCARD';
+export const ERROR = 'ERROR';
