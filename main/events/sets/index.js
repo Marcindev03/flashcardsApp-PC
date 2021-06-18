@@ -19,8 +19,6 @@ export const editSet = async (e, { _id, data }) => {
   try {
     const set = await Set.findById({ _id });
 
-    console.log(data);
-
     set.name = data.name || set.name;
     set.description = data.description || set.description;
     set.rate = data.rate || set.rate;

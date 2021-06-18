@@ -4,4 +4,7 @@ export const DELETE_FLASHCARD = 'DELETE_FLASHCARD';
 export const CREATE_SET = 'CREATE_SET';
 export const EDIT_SET = 'EDIT_SET';
 export const DELETE_SET = 'DELETE_SET';
+export const CREATE_STATE = 'CREATE_STATE';
+export const EDIT_STATE = 'EDIT_STATE';
+export const DELETE_STATE = 'DELETE_STATE';
 export const ERROR = 'ERROR';
