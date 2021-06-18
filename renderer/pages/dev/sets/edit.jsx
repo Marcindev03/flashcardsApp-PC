@@ -114,7 +114,7 @@ const Edit = () => {
             </Link>
           </li>
           <li>
-            <Link href="/dev/sets/edit">
+            <Link href="/dev/sets/delete">
               <a>Go to /sets/delete</a>
             </Link>
           </li>

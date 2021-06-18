@@ -33,3 +33,14 @@ export const editSet = async (e, { _id, data }) => {
     e.sender.send(types.ERROR, `ERROR, set ${data.name} didn't edited`);
   }
 };
+
+export const deleteSet = async (e, { _id }) => {
+  try {
+    const set = await Set.findById({ _id });
+
+    set.remove();
+    e.sender.send(types.DELETE_SET, `${_id} set was successfully deleted`);
+  } catch (err) {
+    e.sender.send(types.ERROR, `ERROR, set ${_id} didn't edited`);
+  }
+};
