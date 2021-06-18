@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import electron from 'electron';
-import * as types from './types';
+import * as types from '../types';
 
 const ipcRenderer = electron.ipcRenderer || false;
 
