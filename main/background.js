@@ -7,6 +7,7 @@ import {
   editFlashcard,
   deleteFlashcard,
 } from './events/flashcards';
+import { createSet } from './events/sets';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -45,6 +46,9 @@ ipcMain.on(types.CREATE_FLASHCARD, (e, data) => createFlashcard(e, data));
 ipcMain.on(types.EDIT_FLASHCARD, (e, data) => editFlashcard(e, data));
 
 ipcMain.on(types.DELETE_FLASHCARD, (e, data) => deleteFlashcard(e, data));
+
+// Sets events
+ipcMain.on(types.CREATE_SET, (e, data) => createSet(e, data));
 
 // const types = {
 //   flashcardsUser: 'flashcards',

@@ -125,6 +125,9 @@ function Home() {
           <button onClick={() => deleteFlashcard()}>Delete Flashcard</button>
         </div>
       </form>
+      <Link href="/sets">
+        <a>Go to /sets</a>
+      </Link>
 
       {/* <div>
         <button onClick={() => ipcRenderer.send(types.getFlashcard)}>
