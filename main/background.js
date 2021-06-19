@@ -1,13 +1,15 @@
 import { app, ipcMain } from 'electron';
 import serve from 'electron-serve';
 import * as types from './types';
-import { createWindow, DBconnect } from './helpers';
+import { createWindow, DBconnect, flashcardsFunctions } from './helpers';
 import {
   createFlashcard,
   editFlashcard,
   deleteFlashcard,
 } from './events/flashcards';
 import { createSet, editSet, deleteSet } from './events/sets';
+import Flashcard from './models/Flashcard';
+import Set from './models/Set';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -53,6 +55,59 @@ ipcMain.on(types.CREATE_SET, (e, data) => createSet(e, data));
 ipcMain.on(types.EDIT_SET, (e, data) => editSet(e, data));
 
 ipcMain.on(types.DELETE_SET, (e, data) => deleteSet(e, data));
+
+// (async () => {
+//   for (let i = 0; i < 1500; i++) {
+//     try {
+//       const name = Math.random().toString(36).substring(7);
+//       const translation = Math.random().toString(36).substring(7);
+//       const flashcard = await new Flashcard({ name, translation });
+//       await flashcard.save();
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+// })();
+
+// (async () => {
+//   for (let i = 0; i < 3; i++) {
+//     try {
+//       const name = Math.random().toString(36).substring(7);
+//       const description = Math.random().toString(36).substring(7);
+//       const rate = Math.floor(Math.random()) ? 'slow' : 'medium';
+
+//       const flashcards = await Flashcard.find({});
+//       let ids = flashcards.map(({ _id }) => _id);
+
+//       ids = ids.slice(300 * i, 300 * i + 900);
+
+//       console.log(ids);
+
+//       const state = [
+//         new Array(30),
+//         new Array(60),
+//         new Array(150),
+//         new Array(240),
+//         new Array(420),
+//       ];
+
+//       for (let i = 0; i < 30; i++) {
+//         state[0][i] = ids[i];
+//       }
+
+//       const set = await new Set({
+//         name,
+//         description,
+//         rate,
+//         flashcards: ids,
+//         state,
+//       });
+//       await set.save();
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+// })();
 
 // const types = {
 //   flashcardsUser: 'flashcards',
