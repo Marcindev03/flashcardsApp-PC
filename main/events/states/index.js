@@ -1,9 +1,23 @@
 import State from '../../models/State';
+import Set from '../../models/Set';
 import * as types from '../../types';
 
-export const createState = async (e, data) => {
+export const createState = async (e, { _id }) => {
   try {
-    const state = new State(data);
+    const flashcardsState = [
+      new Array(30),
+      new Array(60),
+      new Array(150),
+      new Array(240),
+      new Array(420),
+    ];
+    const set = await Set.findById({ _id });
+
+    for (let i = 0; i < 30; i++) {
+      flashcardsState[0][i] = set.flashcards[i];
+    }
+
+    const state = new State({ setId: _id, state: flashcardsState });
     await state.save();
 
     e.sender.send(types.CREATE_STATE, `state was successfully created`);
