@@ -32,11 +32,6 @@ const Layout = ({ children }) => (
             <a>Go to /sets</a>
           </Link>
         </li>
-        <li style={{ margin: '1rem 0' }}>
-          <Link href="/dev/state">
-            <a>Go to /state</a>
-          </Link>
-        </li>
       </ul>
     </nav>
     <main>{children}</main>

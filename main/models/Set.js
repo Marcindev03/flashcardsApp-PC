@@ -16,6 +16,10 @@ const setSchema = new Schema({
     type: [String],
     required: true,
   },
+  state: {
+    type: [[String], [String], [String], [String], [String]],
+    required: true,
+  },
 });
 
 const Set = model('Set', setSchema);
