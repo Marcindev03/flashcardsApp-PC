@@ -1,10 +1,13 @@
 import Link from 'next/link';
 
+import Meta from '../Meta';
+
 import styles from './Layout.module.scss';
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Meta />
       <nav className={styles.navbar}>
         <ul className={styles.menu}>
           <li className={styles.menuItem}>
