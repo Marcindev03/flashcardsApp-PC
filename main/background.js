@@ -8,7 +8,6 @@ import {
   deleteFlashcard,
 } from './events/flashcards';
 import { createSet, editSet, deleteSet } from './events/sets';
-import { createState, editState, deleteState } from './events/states';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -54,13 +53,6 @@ ipcMain.on(types.CREATE_SET, (e, data) => createSet(e, data));
 ipcMain.on(types.EDIT_SET, (e, data) => editSet(e, data));
 
 ipcMain.on(types.DELETE_SET, (e, data) => deleteSet(e, data));
-
-// States events
-ipcMain.on(types.CREATE_STATE, (e, data) => createState(e, data));
-
-ipcMain.on(types.EDIT_STATE, (e, data) => editState(e, data));
-
-ipcMain.on(types.DELETE_STATE, (e, data) => deleteState(e, data));
 
 // const types = {
 //   flashcardsUser: 'flashcards',

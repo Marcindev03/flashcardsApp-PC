@@ -3,6 +3,22 @@ import * as types from '../../types';
 
 export const createSet = async (e, data) => {
   try {
+    const state = [
+      new Array(30),
+      new Array(60),
+      new Array(150),
+      new Array(240),
+      new Array(420),
+    ];
+
+    for (let i = 0; i < 30; i++) {
+      state[0][i] = data.flashcards[i];
+    }
+
+    data.state = state;
+
+    console.log(data);
+
     const set = new Set(data);
     await set.save();
 
@@ -23,6 +39,7 @@ export const editSet = async (e, { _id, data }) => {
     set.description = data.description || set.description;
     set.rate = data.rate || set.rate;
     set.flashcards = data.flashcards || set.flashcards;
+    set.state = data.state || set.state;
 
     set.save();
 
