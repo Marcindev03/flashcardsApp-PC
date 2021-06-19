@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 40vh;
+  transform: translateY(-100%);
+}
+
+.heading {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 4rem;
+}
+
+.loginBtn {
+  padding: 1rem 5rem;
+  border-radius: 30px;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-left: 50vw;
+  transform: translateX(-50%);
+}
