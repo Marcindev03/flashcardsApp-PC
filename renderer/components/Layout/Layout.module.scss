@@ -1,0 +1,14 @@
+.navbar {
+  width: 100vw;
+  padding: 2rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &Item {
+    margin: 0 0.5rem;
+  }
+}
